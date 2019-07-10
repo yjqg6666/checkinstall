@@ -4,7 +4,7 @@ Subject: [PATCH] Set file permissions to o=g instead of 644
 
 When --reset-uids is passed, match world permissions with group
 permissions instead of forcing 644 for everything. This is mainly to
-protect agains build systems that do not take more restrictive umasks
+protect against build systems that do not take more restrictive umasks
 into account.
 ---
  checkinstall |    3 ++-

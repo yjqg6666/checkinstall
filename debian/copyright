@@ -1,4 +1,4 @@
-Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: Checkinstall
 Upstream-Contact: Felipe Eduardo Sánchez Díaz Durán <izto@asic-linux.com.mx>
 Source: http://www.asic-linux.com.mx/~izto/checkinstall/index.php

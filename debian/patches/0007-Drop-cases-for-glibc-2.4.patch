@@ -2,7 +2,7 @@ From: Felipe Sateler <fsateler@gmail.com>
 Date: Thu, 15 Apr 2010 15:00:23 -0400
 Subject: [PATCH] Drop cases for glibc < 2.4
 
-Some functions definitions were dependant on the glibc version. Since
+Some functions definitions were dependent on the glibc version. Since
 2.7 is in stable, drop everything for < 2.4.
 ---
  installwatch/installwatch.c |   31 -------------------------------

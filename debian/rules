@@ -1,6 +1,6 @@
 #!/usr/bin/make -f
 
-# Uncomment this to turn on verbose mode. 
+# Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
 
 %:
@@ -27,7 +27,7 @@ override_dh_auto_install:
 		LIBDIR=$(TMPDIR)/usr/lib/checkinstall
 	# Delete the checkinstallrc-dist file from etc
 	rm -f $(TMPDIR)/etc/checkinstallrc-dist
-	
+
 	# installwatch's documentation
 	mkdir -p $(TMPDIR)/usr/share/doc/checkinstall
 	gzip -9c installwatch/CHANGELOG \
