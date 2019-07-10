@@ -1,7 +1,7 @@
 Source: checkinstall
 Section: admin
 Priority: optional
-Maintainer: Andreas Noteng <andreas@noteng.no>
+Maintainer: Stephen Gelman <ssgelm@debian.org>
 Build-Depends: debhelper (>= 7.0.50~),
                docbook-to-man,
                gettext,
