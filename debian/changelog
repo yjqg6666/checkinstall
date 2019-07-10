@@ -1,3 +1,16 @@
+checkinstall (1.6.2-5) UNRELEASED; urgency=medium
+
+  * New maintainer
+  * Move VCS to salsa
+  * Update to debhelper compat level 12
+  * Update to Standards-Version 4.4.0 (no change)
+  * Minor lintian fixes
+  * Test installcheck when building the package using included tests
+  * Fix segfault relating to _xstat64() (Thanks to Giulio Moro for the fix!)
+    (Closes: #878487)
+
+ -- Stephen Gelman <ssgelm@debian.org>  Tue, 09 Jul 2019 00:24:55 -0500
+
 checkinstall (1.6.2-4) unstable; urgency=low
 
   [ Andreas Noteng ]
