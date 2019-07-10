@@ -10,8 +10,8 @@ Build-Depends: debhelper (>= 7.0.50~),
                libc6-dev (>=2.10) [i386 amd64 armel hppa mips mipsel powerpc s390 sparc],
                libc6.1-dev (>=2.10) [alpha ia64]
 Standards-Version: 3.9.3
-Vcs-Git: git://git.debian.org/git/collab-maint/checkinstall.git
-Vcs-Browser: http://git.debian.org/?p=collab-maint/checkinstall.git;a=summary
+Vcs-Git: https://salsa.debian.org/debian/checkinstall.git
+Vcs-Browser: https://salsa.debian.org/debian/checkinstall
 Homepage: http://checkinstall.izto.org
 
 Package: checkinstall
