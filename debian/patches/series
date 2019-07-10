@@ -10,3 +10,4 @@
 0010-Dont-include-dirs-in-conffiles.patch
 0011-fix-crash-when-sizeof-mode_t-sizeof-int.patch
 0012-add-debian-cflags.patch
+0013-fix-installcheck-tests.patch

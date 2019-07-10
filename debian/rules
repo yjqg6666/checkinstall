@@ -16,6 +16,13 @@ override_dh_auto_clean:
 	rm -f debian/checkinstall.8
 	rm -f debian/installwatch.1
 
+ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
+TESTDIR=$(CURDIR)/debian/testtmp
+override_dh_auto_test:
+		$(MAKE) -C installwatch test PREFIX=$(TESTDIR)
+		rm -rf $(TESTDIR)
+endif
+
 TMPDIR=$(CURDIR)/debian/tmp
 override_dh_auto_install:
 	# We override all paths: we want the binary in bin instead of
