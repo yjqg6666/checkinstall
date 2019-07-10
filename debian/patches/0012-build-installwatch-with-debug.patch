@@ -1,0 +1,19 @@
+From: Stephen Gelman <ssgelm@debian.org>
+Date: Tue, 9 Jul 2019 01:12:52 -0500
+Subject: Build with debug symbols
+
+This allows dh_dwz to work properly allowing dh compay level 12 to work
+---
+diff --git a/installwatch/Makefile b/installwatch/Makefile
+index ae34fc1..0747ceb 100644
+--- a/installwatch/Makefile
++++ b/installwatch/Makefile
+@@ -19,7 +19,7 @@ installwatch.so: installwatch.o
+ 	ld -shared -o installwatch.so installwatch.o -ldl -lc
+ 
+ installwatch.o: installwatch.c localdecls.h
+-	gcc -Wall -c -D_GNU_SOURCE -DPIC -fPIC -D_REENTRANT -DVERSION=\"$(VERSION)\" installwatch.c
++	gcc -Wall -c -g -D_GNU_SOURCE -DPIC -fPIC -D_REENTRANT -DVERSION=\"$(VERSION)\" installwatch.c
+ 
+ localdecls.h: create-localdecls
+ 	./create-localdecls
