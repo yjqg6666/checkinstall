@@ -23,11 +23,9 @@ This patch simply uses int instead of mode_t and fixes Debian bug
  installwatch/installwatch.c |    6 +++---
  1 files changed, 3 insertions(+), 3 deletions(-)
 
-diff --git a/installwatch/installwatch.c b/installwatch/installwatch.c
-index 8004b5b..f55f7a1 100644
 --- a/installwatch/installwatch.c
 +++ b/installwatch/installwatch.c
-@@ -2857,7 +2857,7 @@ int open(const char *pathname, int flags, ...) {
+@@ -2818,7 +2818,7 @@
  #endif
  
  	va_start(ap, flags);
@@ -36,7 +34,7 @@ index 8004b5b..f55f7a1 100644
  	va_end(ap);
  
  	  /* We were asked to work in "real" mode */
-@@ -3644,7 +3644,7 @@ int open64(const char *pathname, int flags, ...) {
+@@ -3595,7 +3595,7 @@
  #endif
  
  	va_start(ap, flags);
@@ -45,7 +43,7 @@ index 8004b5b..f55f7a1 100644
  	va_end(ap);
  
  	  /* We were asked to work in "real" mode */
-@@ -3887,7 +3887,7 @@ int openat (int dirfd, const char *path, int flags, ...) {
+@@ -3832,7 +3832,7 @@
   	va_list arg;
   	if(flags & O_CREAT) {
   		va_start(arg, flags);
@@ -54,6 +52,3 @@ index 8004b5b..f55f7a1 100644
   		va_end (arg);
   	}
   	
--- 
-1.7.2.5
-
