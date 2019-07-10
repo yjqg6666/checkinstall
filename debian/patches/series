@@ -11,3 +11,4 @@
 0011-fix-crash-when-sizeof-mode_t-sizeof-int.patch
 0012-add-debian-cflags.patch
 0013-fix-installcheck-tests.patch
+0014-fix-xstat64.patch
