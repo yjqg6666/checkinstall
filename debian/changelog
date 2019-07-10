@@ -1,4 +1,4 @@
-checkinstall (1.6.2-5) UNRELEASED; urgency=medium
+checkinstall (1.6.2-5) unstable; urgency=medium
 
   * New maintainer
   * Move VCS to salsa
@@ -9,7 +9,7 @@ checkinstall (1.6.2-5) UNRELEASED; urgency=medium
   * Fix segfault relating to _xstat64() (Thanks to Giulio Moro for the fix!)
     (Closes: #878487)
 
- -- Stephen Gelman <ssgelm@debian.org>  Tue, 09 Jul 2019 00:24:55 -0500
+ -- Stephen Gelman <ssgelm@debian.org>  Tue, 09 Jul 2019 23:01:02 -0500
 
 checkinstall (1.6.2-4) unstable; urgency=low
 
