@@ -12,3 +12,4 @@
 0012-add-debian-cflags.patch
 0013-fix-installcheck-tests.patch
 0014-fix-xstat64.patch
+0015-fix-dpkg-conffiles.patch
