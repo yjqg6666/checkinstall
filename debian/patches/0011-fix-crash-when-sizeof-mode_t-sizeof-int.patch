@@ -25,7 +25,7 @@ This patch simply uses int instead of mode_t and fixes Debian bug
 
 --- a/installwatch/installwatch.c
 +++ b/installwatch/installwatch.c
-@@ -2818,7 +2818,7 @@
+@@ -2838,7 +2838,7 @@
  #endif
  
  	va_start(ap, flags);
@@ -34,7 +34,7 @@ This patch simply uses int instead of mode_t and fixes Debian bug
  	va_end(ap);
  
  	  /* We were asked to work in "real" mode */
-@@ -3595,7 +3595,7 @@
+@@ -3619,7 +3619,7 @@
  #endif
  
  	va_start(ap, flags);
@@ -43,7 +43,7 @@ This patch simply uses int instead of mode_t and fixes Debian bug
  	va_end(ap);
  
  	  /* We were asked to work in "real" mode */
-@@ -3832,7 +3832,7 @@
+@@ -3860,7 +3860,7 @@
   	va_list arg;
   	if(flags & O_CREAT) {
   		va_start(arg, flags);

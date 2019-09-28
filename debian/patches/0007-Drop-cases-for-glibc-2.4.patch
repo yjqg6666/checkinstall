@@ -8,11 +8,9 @@ Some functions definitions were dependent on the glibc version. Since
  installwatch/installwatch.c |   31 -------------------------------
  1 files changed, 0 insertions(+), 31 deletions(-)
 
-diff --git a/installwatch/installwatch.c b/installwatch/installwatch.c
-index d34850d..857b9aa 100644
 --- a/installwatch/installwatch.c
 +++ b/installwatch/installwatch.c
-@@ -88,11 +88,7 @@ static int (*true_xmknod)(int ver,const char *, mode_t, dev_t *);
+@@ -88,11 +88,7 @@
  static int (*true_open)(const char *, int, ...);
  static DIR *(*true_opendir)(const char *);
  static struct dirent *(*true_readdir)(DIR *dir);
@@ -24,7 +22,7 @@ index d34850d..857b9aa 100644
  static char *(*true_realpath)(const char *,char *);
  static int (*true_rename)(const char *, const char *);
  static int (*true_rmdir)(const char *);
-@@ -111,8 +107,6 @@ static int (*true_setxattr)(const char *,const char *,const void *,
+@@ -122,8 +118,6 @@
                              size_t, int);
  static int (*true_removexattr)(const char *,const char *);
  
@@ -33,7 +31,7 @@ index d34850d..857b9aa 100644
  static int (*true_creat64)(const char *, __mode_t);
  static FILE *(*true_fopen64)(const char *,const char *);
  static int (*true_ftruncate64)(int, __off64_t);
-@@ -125,9 +119,7 @@ static int (*true_xstat64)(int,const char *, struct stat64 *);
+@@ -143,9 +137,7 @@
  static int (*true_lxstat64)(int,const char *, struct stat64 *);
  static int (*true_truncate64)(const char *, __off64_t);
  
@@ -43,7 +41,7 @@ index d34850d..857b9aa 100644
  static int (*true_openat)(int, const char *, int, ...);
  static int (*true_fchmodat)(int, const char *, mode_t, int);
  static int (*true_fchownat)(int, const char *, uid_t, gid_t, int);
-@@ -140,7 +132,6 @@ static int (*true_xmknodat)(int, int, const char *, mode_t, dev_t *);
+@@ -158,7 +150,6 @@
  static int (*true_renameat)(int, const char *, int, const char *);
  static int (*true_symlinkat)(const char *, int, const char *);
  static int (*true_unlinkat)(int, const char *, int);
@@ -51,7 +49,7 @@ index d34850d..857b9aa 100644
  
  #if defined __GNUC__ && __GNUC__>=2
  	#define inline inline
-@@ -160,7 +151,6 @@ static inline int true_lstat(const char *pathname,struct stat *info) {
+@@ -178,7 +169,6 @@
  	return true_lxstat(_STAT_VER,pathname,info);
  }
  
@@ -59,7 +57,7 @@ index d34850d..857b9aa 100644
  static inline int true_fstatat(int dirfd, const char *pathname, struct stat *info, int flags) {
  	return true_fxstatat(_STAT_VER, dirfd, pathname, info, flags);
  }
-@@ -173,7 +163,6 @@ static inline int true_mknodat(int dirfd, const char *pathname,mode_t mode,dev_t
+@@ -191,7 +181,6 @@
  	return true_xmknodat(_MKNOD_VER, dirfd, pathname, mode, &dev);
  }
  
@@ -67,7 +65,7 @@ index d34850d..857b9aa 100644
  
    /* A few defines to fix things a little */
  #define INSTW_OK 0 
-@@ -267,10 +256,8 @@ int parse_suffix(char *,char *,const char *);
+@@ -285,10 +274,8 @@
  
  #if DEBUG
  static int __instw_printdirent(struct dirent*);
@@ -78,7 +76,7 @@ index d34850d..857b9aa 100644
  
  #ifdef DEBUG
  static int instw_print(instw_t *);
-@@ -285,9 +272,7 @@ static int instw_delete(instw_t *);
+@@ -303,9 +290,7 @@
  static int instw_setmetatransl(instw_t *);
  
  static int instw_setpath(instw_t *,const char *);
@@ -88,7 +86,7 @@ index d34850d..857b9aa 100644
  static int instw_getstatus(instw_t *,int *);
  static int instw_apply(instw_t *);
  static int instw_filldirls(instw_t *);
-@@ -374,7 +359,6 @@ static void initialize(void) {
+@@ -392,7 +377,6 @@
  
  
  
@@ -96,7 +94,7 @@ index d34850d..857b9aa 100644
  	true_creat64     = dlsym(libc_handle, "creat64");
  	true_fopen64     = dlsym(libc_handle, "fopen64");
  	true_ftruncate64 = dlsym(libc_handle, "ftruncate64");
-@@ -385,9 +369,7 @@ static void initialize(void) {
+@@ -403,9 +387,7 @@
  	true_lxstat64    = dlsym(libc_handle, "__lxstat64");
  	true_truncate64  = dlsym(libc_handle, "truncate64");
          true_removexattr = dlsym(libc_handle, "removexattr");
@@ -106,7 +104,7 @@ index d34850d..857b9aa 100644
  
  	true_openat      = dlsym(libc_handle, "openat");
  	true_fchmodat      = dlsym(libc_handle, "fchmodat");
-@@ -402,7 +384,6 @@ static void initialize(void) {
+@@ -420,7 +402,6 @@
  	true_symlinkat     = dlsym(libc_handle, "symlinkat");
  	true_unlinkat      = dlsym(libc_handle, "unlinkat");
  
@@ -114,7 +112,7 @@ index d34850d..857b9aa 100644
  
  	if(instw_init()) exit(-1);
  }
-@@ -1669,7 +1650,6 @@ static int instw_setpath(instw_t *instw,const char *path) {
+@@ -1687,7 +1668,6 @@
   * returns   = /  0 ok. path set
   *               -1 failed. cf errno /
   */
@@ -122,7 +120,7 @@ index d34850d..857b9aa 100644
  static int instw_setpathrel(instw_t *instw, int dirfd, const char *relpath) {
  
  /* This constant should be large enough to make a string that holds
-@@ -1709,7 +1689,6 @@ out:
+@@ -1727,7 +1707,6 @@
  
  #undef PROC_PATH_LEN
  }
@@ -130,7 +128,7 @@ index d34850d..857b9aa 100644
  
  /*
   * procedure = / rc:=instw_getstatus(instw,status) /
-@@ -2938,13 +2917,8 @@ struct dirent *readdir(DIR *dir) {
+@@ -2958,13 +2937,8 @@
  	return result;
  }
  
@@ -144,7 +142,7 @@ index d34850d..857b9aa 100644
  	instw_t instw;
  	int status;
  
-@@ -3494,7 +3468,6 @@ int removexattr (const char *pathname, const char *name)
+@@ -3518,7 +3492,6 @@
          return result;
  }
  
@@ -152,7 +150,7 @@ index d34850d..857b9aa 100644
  
  int creat64(const char *pathname, __mode_t mode) {
  /* Is it a system call? */
-@@ -3834,7 +3807,6 @@ int truncate64(const char *path, __off64_t length) {
+@@ -3862,7 +3835,6 @@
  	return result;
  }
  
@@ -160,7 +158,7 @@ index d34850d..857b9aa 100644
  
  
  /***********************************************
-@@ -3854,7 +3826,6 @@ int truncate64(const char *path, __off64_t length) {
+@@ -3882,7 +3854,6 @@
   * Thanks to Gilbert Ashley for his work on this!
   */
  
@@ -168,10 +166,9 @@ index d34850d..857b9aa 100644
   
  int openat (int dirfd, const char *path, int flags, ...) {
   	mode_t mode = 0;
-@@ -4519,5 +4490,3 @@ int unlinkat (int dirfd, const char *path, int flags) {
+@@ -4547,5 +4518,3 @@
  
  }
  
 -
 -#endif /* GLIBC_MINOR >= 4 */
--- 

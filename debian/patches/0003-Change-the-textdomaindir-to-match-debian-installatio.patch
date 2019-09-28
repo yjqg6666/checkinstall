@@ -7,12 +7,10 @@ Subject: [PATCH] Change the textdomaindir to match debian installation
  checkinstall |    2 +-
  1 files changed, 1 insertions(+), 1 deletions(-)
 
-diff --git a/checkinstall b/checkinstall
-index 41a7978..d2ba87e 100755
---- a/checkinstall
-+++ b/checkinstall
-@@ -65,7 +65,7 @@ INSTALLDIR=`followlinks "$0"`
- INSTALLDIR=`dirname "$INSTALLDIR"`/..
+--- a/checkinstall.in
++++ b/checkinstall.in
+@@ -64,7 +64,7 @@
+ INSTALLDIR=MAKEFILE_PREFIX
  
  # gettext variables
 -export TEXTDOMAINDIR="$INSTALLDIR"/lib/checkinstall/locale
@@ -20,4 +18,3 @@ index 41a7978..d2ba87e 100755
  export TEXTDOMAIN=checkinstall
  
  # .spec file path
--- 

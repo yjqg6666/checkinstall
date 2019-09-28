@@ -14,7 +14,7 @@ This causes a segmentation fault on Debian Stretch when invoking e.g.:
 ---
 --- a/installwatch/installwatch.c
 +++ b/installwatch/installwatch.c
-@@ -3745,6 +3745,9 @@
+@@ -3734,6 +3734,9 @@
  	instw_setpath(&instw,pathname);
  	instw_getstatus(&instw,&status);
  
