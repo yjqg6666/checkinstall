@@ -1,3 +1,10 @@
+checkinstall (1.6.2+git20170426.d24a630-2) unstable; urgency=medium
+
+  * Remove embedded build path to make build reproducible (closes: #941715)
+    Thanks to Chris Lamb for the fix!
+
+ -- Stephen Gelman <ssgelm@debian.org>  Fri, 04 Oct 2019 16:49:50 -0500
+
 checkinstall (1.6.2+git20170426.d24a630-1) unstable; urgency=medium
 
   * Project is not making new releases but has fixes in git so pulling those

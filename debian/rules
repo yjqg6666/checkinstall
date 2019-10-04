@@ -53,6 +53,9 @@ override_dh_auto_install:
 	sed -i -e 's|PREFIX/lib|PREFIX/lib/checkinstall|' \
 		$(TMPDIR)/usr/bin/installwatch
 
+	# Remove absolute buildpath
+	sed -i -e 's|^INSTALLDIR=.*|INSTALLDIR=/usr|' $(TMPDIR)/usr/bin/checkinstall
+
 	# Remove unwanted makepak binary
 	rm -f $(TMPDIR)/usr/bin/makepak
 
