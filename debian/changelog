@@ -2,6 +2,7 @@ checkinstall (1.6.2+git20170426.d24a630-3) unstable; urgency=medium
 
   * Fix building under glibc >= 2.33. Thanks to Lukas Märdian for the fix!
     (Closes: #996478)
+  * Bump standards version and dh compat level (no changes necessary)
 
  -- Stephen Gelman <ssgelm@debian.org>  Fri, 15 Oct 2021 02:09:53 -0500
 
