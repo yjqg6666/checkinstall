@@ -9,3 +9,4 @@
 0013-fix-installcheck-tests.patch
 0014-fix-xstat64.patch
 0015-add-renameat2.patch
+0016-Define-_STAT_VER-_MKNOD_VER-locally-dropped-in-glibc.patch
